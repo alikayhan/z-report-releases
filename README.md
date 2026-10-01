@@ -104,17 +104,17 @@ it and says so. That is what makes the export safe to paste into a review.
 
 Everything, with two exceptions that you are told about up front.
 
-- All data — evidence, candidates, journal, settings — lives in
+- All data (evidence, candidates, journal, settings) lives in
   `~/Library/Application Support/com.alikayhan.zreport/` as SQLite. No accounts, no
   sync, no backend, no analytics, no telemetry.
-- **Exception 1 — evaluation.** Each Z-read runs on your own Claude Code account, or on
+- **Exception 1, evaluation.** Each Z-read runs on your own Claude Code account, or on
   your Codex account when Claude Code is not installed or its run fails, and sends the
   prepared evidence package (session excerpts, file paths, command results, names of
   connected tools used, commit and pull request metadata) to Anthropic, or to OpenAI for
   a Codex run. It is the same boundary as using that tool itself. Arguments passed to
   connected tools are never included; only the server and tool name. Prompt excerpts can
   be turned off in Settings → Privacy.
-- **Exception 2 — update check.** About once a day the app asks GitHub for the latest
+- **Exception 2, update check.** About once a day the app asks GitHub for the latest
   release metadata. The request carries nothing about you or your work.
 
 The evaluator itself is sandboxed: an ephemeral run with a read-only tool allowlist, a
